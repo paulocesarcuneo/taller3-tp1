@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About</title>
+  <link rel="shortcut icon" href="img/favicon.ico">
+</head>
+<body>
+  <header>
+    <img src="img/logo_fiuba.png" alt="Fiuba">
+    <nav>
+      |<a href="home.html">Home</a> | <a href="jobs.html">Jobs</a>
+      | <a href="#">About</a> |
+    </nav>
+  </header>
+  <main>
+    <h1>About us!</h1>There's more about us than you know. Trust
+    us!
+    <ul>
+      <li>
+        <a href="offices.html">Offices</a>
+      </li>
+      <li>
+        <a href="legals.html">Legal</a>
+      </li>
+    </ul>
+  </main>
+  <div>
+    Visit:
+    <div id="visits">
+      Loading...
+    </div>
+  </div>
+  <script type="text/javascript" src="visits.js"></script>
+  <script type="text/javascript">
+
+    (async function(){
+      await postVisit("about")
+      await getVisits("about")
+    })()
+  </script>
+</body>
+</html>

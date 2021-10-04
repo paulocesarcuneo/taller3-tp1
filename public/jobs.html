@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jobs</title>
+  <link rel="shortcut icon" href="img/favicon.ico">
+</head>
+<body>
+  <header>
+    <img src="img/logo_fiuba.png" alt="Fiuba">
+    <nav>
+      |<a href="home.html">Home</a> | <a href="#">Jobs</a> |
+      <a href="about.html">About</a> |
+    </nav>
+  </header>
+  <main>
+    <h1>Wanna do stuff for money, join us!</h1>Lots of jobs
+    Information
+  </main>
+  <div>
+    Visit:
+    <div id="visits">
+      Loading...
+    </div>
+  </div>
+  <script type="text/javascript" src="visits.js"></script>
+  <script type="text/javascript">
+    (async function() {
+      await postVisit("jobs")
+      await getVisits("jobs")
+    })()
+  </script>
+</body>
+</html>
