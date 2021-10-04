@@ -7,4 +7,4 @@ zip site.zip -r public visits.py main.py requirements.txt
 
 git add .
 git commit -m "Release $(cat public/version)"
-git tag -a "$(cat public/version)"
+git tag -a "$(cat public/version)" -m "Release $(cat public/version)"
