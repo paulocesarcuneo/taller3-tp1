@@ -13,7 +13,9 @@ def handle_api(request):
 
 
 def handle_html(request):
-    page_name = request.path[1:] if request.path else "home.html"
+    page_name = (
+        request.path[1:] if request.path and request.path != "/" else "home.html"
+    )
     return send_from_directory(os.path.abspath("public"), page_name)
 
 
