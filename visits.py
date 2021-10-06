@@ -25,7 +25,7 @@ def get_visits(request):
     return str(total)
 
 
-def post_visits(request):
+def post_visits_direct(request):
     page_name = request.get_json()["page_name"]
     with db.transaction():
         page_counter = db.get(db.key("page", page_name))
@@ -35,21 +35,21 @@ def post_visits(request):
     return "Ok"
 
 
-# from google.cloud import pubsub_v1
+from google.cloud import pubsub_v1
 
-# TOPIC_ID = environ.get("TOPIC_ID", "visits")
-# publisher = pubsub_v1.PublisherClient()
+TOPIC_ID = environ.get("TOPIC_ID", "visits")
+publisher = pubsub_v1.PublisherClient()
 
 
-# def post_visits_pubsub(request):
-#     payload = request.get_json()
-#     page_name = payload["page_name"]
-#     topic_path = publisher.topic_path(PROJECT_ID, TOPIC_ID)
-#     message_bytes = page_name.encode("utf-8")
-#     try:
-#         publish_future = publisher.publish(topic_path, data=message_bytes)
-#         publish_future.result()
-#         return "Message published."
-#     except Exception as e:
-#         print(e)
-#         return (e, 500)
+def post_visits(request):
+    payload = request.get_json()
+    page_name = payload["page_name"]
+    topic_path = publisher.topic_path(PROJECT_ID, TOPIC_ID)
+    message_bytes = page_name.encode("utf-8")
+    try:
+        publish_future = publisher.publish(topic_path, data=message_bytes)
+        publish_future.result()
+        return "Message published."
+    except Exception as e:
+        print(e)
+        return (e, 500)

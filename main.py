@@ -13,10 +13,10 @@ def handle_api(request):
 
 
 def handle_html(request):
-    page_name = (
-        request.path[1:] if request.path and request.path != "/" else "home.html"
-    )
-    return send_from_directory(os.path.abspath("public"), page_name)
+    if request.path and request.path != "/":
+        page_name = request.path[1:]
+        return send_from_directory(os.path.abspath("public"), page_name)
+    return ("", 301, {"Location": "/home.html"})
 
 
 def site(request):

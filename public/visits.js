@@ -36,7 +36,7 @@ const paintGiveUp = () =>
 const paintRetry = () =>
   (document.querySelector("#visits").innerText = "Retrying... :| ");
 
-const SERVICE_URL = "/site/api/visits"; // http://localhost:5000/api/visits";
+const SERVICE_URL = "/api/visits"; // "/site/api/visits";
 const getVisits = withRetry({
   task: (pageName) => fetchOrNull(SERVICE_URL + `?page_name=${pageName}`),
   onDone: paintVisits,
