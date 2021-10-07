@@ -2,7 +2,7 @@ def api(request):
     import visits
     import publish
 
-    page_name = request.path.split("/api/visits/")[-1]
+    page_name = request.path.split("/visits/")[-1]
     if request.method == "POST":
         return publish.post_visits(page_name)
     elif request.method == "GET":
