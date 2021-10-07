@@ -1,6 +1,6 @@
 import base64
 from google.cloud import pubsub_v1
-from visits import inc_visits
+from main import inc_visits
 
 
 def create_topic(project_id: str, topic_id: str) -> None:

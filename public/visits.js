@@ -38,7 +38,7 @@ const paintRetry = () =>
 
 const SERVICE_URL = "/api/visits"; // "/site/api/visits";
 const getVisits = withRetry({
-  task: (pageName) => fetchOrNull(SERVICE_URL + `?page_name=${pageName}`),
+  task: (pageName) => fetchOrNull(SERVICE_URL + `/${pageName}`),
   onDone: paintVisits,
   onGiveUp: paintGiveUp,
   onRetry: paintRetry,
@@ -49,10 +49,8 @@ const getVisits = withRetry({
 const logPost = (msg) => (obj) => console.log(msg, obj);
 const postVisit = withRetry({
   task: (pageName) =>
-    fetchOrNull(SERVICE_URL, {
+    fetchOrNull(SERVICE_URL + `/${pageName}`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ page_name: pageName }),
     }),
   onDone: logPost("Post done"),
   onGiveUp: logPost("Post given up"),
