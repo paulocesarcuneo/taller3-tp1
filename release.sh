@@ -3,7 +3,7 @@ set -euo pipefail
 
 echo $(( $(cat public/version) + 1 )) > public/version
 
-zip site.zip -r public visits.py main.py requirements.txt
+zip site.zip -r public requirements.txt *.py
 
 git add .
 git commit -m "Release $(cat public/version)"
