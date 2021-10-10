@@ -1,0 +1,11 @@
+Method,Name,Error,Occurrences
+GET,/api/visits/legals,429 Client Error: Too Many Requests for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/legals,9
+GET,/api/visits/offices,429 Client Error: Too Many Requests for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/offices,5
+POST,/api/visits/jobs,429 Client Error: Too Many Requests for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/jobs,12
+POST,/api/visits/offices,429 Client Error: Too Many Requests for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/offices,14
+GET,/api/visits/about,429 Client Error: Too Many Requests for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/about,37
+POST,/api/visits/home,429 Client Error: Too Many Requests for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/home,42
+GET,/api/visits/jobs,429 Client Error: Too Many Requests for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/jobs,5
+POST,/api/visits/legals,429 Client Error: Too Many Requests for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/legals,11
+GET,/api/visits/home,429 Client Error: Too Many Requests for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/home,39
+POST,/api/visits/about,429 Client Error: Too Many Requests for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/about,32

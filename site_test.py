@@ -144,19 +144,3 @@ class LoadShape:
 
             current_step = math.floor(run_time / self.step_time) + 1
             return (current_step * self.step_load, self.spawn_rate)
-
-
-class StepLoadShape(LoadTestShape):
-    step_time = 30
-    step_load = 10
-    spawn_rate = 10
-    time_limit = 10000
-
-    def tick(self):
-        run_time = self.get_run_time()
-
-        if run_time > self.time_limit:
-            return None
-
-        current_step = math.floor(run_time / self.step_time) + 1
-        return (current_step * self.step_load, self.spawn_rate)

@@ -12,31 +12,32 @@ def entity_inc_visits(key):
         DB.put(page_counter)
 
 
+# def inc_visits(page_name):
+#     entity_inc_visits(page_name)
+
+
+# def get_visits(page_name):
+#     page_counter = DB.get(DB.key("page", page_name))
+#     total = page_counter["visits"]
+#     return str(total)
+
+
+import random
+
+N_SHARDS = int(environ.get("N_SHARDS", "10"))
+
+
 def inc_visits(page_name):
-    entity_inc_visits(page_name)
+    nshard = random.randint(0, N_SHARDS - 1)
+    entity_inc_visits(f"{page_name}_{nshard}")
 
 
 def get_visits(page_name):
-    page_counter = DB.get(DB.key("page", page_name))
-    total = page_counter["visits"]
-    return str(total)
-
-
-# import random
-# N_SHARDS = int(environ.get("N_SHARDS", "10"))
-
-
-# def sharded_inc_visits(page_name):
-#     nshard = random.randint(0, N_SHARDS - 1)
-#     entity_inc_visits(f"{page_name}_{nshard}")
-
-
-# def sharded_get_visits(page_name):
-#     total = 0
-#     shards = list(DB.query(kind="page").add_filter("group", "=", page_name).fetch())
-#     for shard in shards:
-#         total += shard["visits"]
-#     return total
+    total = 0
+    shards = list(DB.query(kind="page").add_filter("group", "=", page_name).fetch())
+    for shard in shards:
+        total += shard["visits"]
+    return total
 
 
 def init_visits(nshards):
