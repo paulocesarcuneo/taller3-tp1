@@ -17,8 +17,8 @@ def retry(times: int, op):
 
 
 class Browser:
-    api_request_timeout = 2
-    assets_request_timeout = 5
+    api_request_timeout = 4
+    assets_request_timeout = 32
     cache = {}
     cache_enabled = os.getenv("CACHE_ENABLED", "False") == "True"
     retry_post = 3
@@ -29,7 +29,7 @@ class Browser:
     def download_page(self, page_name):
         if self.cache_enabled and self.cache[page_name]:
             return
-        html_response = self.client.get(f"/{page_name}.html")
+        html_response = self.client.get(f"/site/{page_name}.html")
         html = html_response.content
 
         def assets(html):
@@ -46,7 +46,7 @@ class Browser:
             return result
 
         for asset in assets(html):
-            self.client.get("/" + asset, timeout=self.assets_request_timeout)
+            self.client.get("/site/" + asset, timeout=self.assets_request_timeout)
 
         self.cache[page_name] = True
 
