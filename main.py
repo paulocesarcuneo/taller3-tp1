@@ -32,6 +32,8 @@ def static(request):
 def site(request):
     if request.path.startswith("/api/visits"):
         return api(request)
+    elif request.path.startswith("/config"):
+        return config(request)
     else:
         return static(request)
 
@@ -47,3 +49,10 @@ def inc_visits(event, context):
 
     delta = time.process_time() - start
     print("inc_visits", delta, page_name)
+
+
+def config(request):
+    import visits
+
+    visits.init_visits(int(request.args["shards"]))
+    return "Ok"
