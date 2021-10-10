@@ -37,7 +37,7 @@ def get_visits(page_name):
     shards = list(DB.query(kind="page").add_filter("group", "=", page_name).fetch())
     for shard in shards:
         total += shard["visits"]
-    return total
+    return str(total)
 
 
 def init_visits(nshards):
