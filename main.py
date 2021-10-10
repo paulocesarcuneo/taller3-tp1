@@ -1,14 +1,22 @@
+import time
+
+
 def api(request):
     import visits
     import publish
 
+    start = time.process_time()
     page_name = request.path.split("/visits/")[-1]
+
+    result = ("Sorry, are you lost?", 404)
     if request.method == "POST":
-        return publish.post_visits(page_name)
+        result = publish.post_visits(page_name)
     elif request.method == "GET":
-        return visits.get_visits(page_name)
-    else:
-        return ("Sorry, are you lost?", 404)
+        result = visits.get_visits(page_name)
+
+    delta = time.process_time() - start
+    print("api", delta, page_name, request.method)
+    return result
 
 
 def static(request):
@@ -32,5 +40,10 @@ def inc_visits(event, context):
     import base64
     import visits
 
+    start = time.process_time()
+
     page_name = base64.b64decode(event["data"]).decode("utf-8")
     visits.inc_visits(page_name)
+
+    delta = time.process_time() - start
+    print("inc_visits", delta, page_name)
