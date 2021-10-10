@@ -1,0 +1,7 @@
+Method,Name,Error,Occurrences
+POST,/api/visits/jobs,"HTTPConnectionPool(host='us-central1-taller3-pcuneo.cloudfunctions.net', port=80): Read timed out. (read timeout=4)",1
+GET,/site/about.html,"(""Connection broken: ConnectionResetError(104, 'Connection reset by peer')"", ConnectionResetError(104, 'Connection reset by peer'))",1
+GET,/img/favicon.ico,Remote end closed connection without response,1
+POST,/api/visits/home,"HTTPConnectionPool(host='us-central1-taller3-pcuneo.cloudfunctions.net', port=80): Read timed out. (read timeout=4)",2
+POST,/api/visits/offices,"HTTPConnectionPool(host='us-central1-taller3-pcuneo.cloudfunctions.net', port=80): Read timed out. (read timeout=4)",1
+GET,/api/visits/home,"HTTPConnectionPool(host='us-central1-taller3-pcuneo.cloudfunctions.net', port=80): Read timed out. (read timeout=4)",1

@@ -1,0 +1,41 @@
+Method,Name,Error,Occurrences
+POST,/api/visits/jobs,[Errno -2] Name or service not known,2
+GET,/img/favicon.ico,"HTTPSConnectionPool(host='accounts.google.com', port=443): Read timed out. (read timeout=32)",6
+POST,/api/visits/about,[Errno -2] Name or service not known,1
+POST,/api/visits/legals,"(<urllib3.connection.HTTPConnection object at 0x7fbaaad11700>, 'Connection to us-central1-taller3-pcuneo.cloudfunctions.net timed out. (connect timeout=4)')",1
+GET,/visits.js,"HTTPSConnectionPool(host='accounts.google.com', port=443): Read timed out. (read timeout=32)",4
+POST,/api/visits/jobs,"HTTPConnectionPool(host='us-central1-taller3-pcuneo.cloudfunctions.net', port=80): Read timed out. (read timeout=4)",10
+GET,/visits.js,"HTTPSConnectionPool(host='accounts.google.com', port=443): Read timed out.",51
+GET,/api/visits/about,[Errno -2] Name or service not known,2
+POST,/api/visits/legals,"HTTPConnectionPool(host='us-central1-taller3-pcuneo.cloudfunctions.net', port=80): Read timed out. (read timeout=4)",14
+GET,/api/visits/offices,[Errno -2] Name or service not known,1
+GET,/api/visits/offices,"HTTPConnectionPool(host='us-central1-taller3-pcuneo.cloudfunctions.net', port=80): Read timed out. (read timeout=4)",8
+POST,/api/visits/home,"(<urllib3.connection.HTTPConnection object at 0x7fbaaa9eed90>, 'Connection to us-central1-taller3-pcuneo.cloudfunctions.net timed out. (connect timeout=4)')",1
+GET,/visits.js,[Errno -2] Name or service not known,11
+POST,/api/visits/offices,"(<urllib3.connection.HTTPConnection object at 0x7fbad0030d60>, 'Connection to us-central1-taller3-pcuneo.cloudfunctions.net timed out. (connect timeout=4)')",1
+GET,/img/favicon.ico,Remote end closed connection without response,13
+GET,/img/logo_fiuba.png,[Errno -2] Name or service not known,7
+GET,/site/home.html,[Errno -2] Name or service not known,34
+GET,/img/logo_fiuba.png,Remote end closed connection without response,4
+GET,/img/favicon.ico,[Errno 104] Connection reset by peer,1
+GET,/img/logo_fiuba.png,"HTTPSConnectionPool(host='accounts.google.com', port=443): Read timed out.",74
+POST,/api/visits/home,"HTTPConnectionPool(host='us-central1-taller3-pcuneo.cloudfunctions.net', port=80): Read timed out. (read timeout=4)",44
+GET,/api/visits/legals,"HTTPConnectionPool(host='us-central1-taller3-pcuneo.cloudfunctions.net', port=80): Read timed out. (read timeout=4)",8
+GET,/api/visits/home,"(<urllib3.connection.HTTPConnection object at 0x7fbac81d9a30>, 'Connection to us-central1-taller3-pcuneo.cloudfunctions.net timed out. (connect timeout=4)')",2
+POST,/api/visits/home,[Errno -2] Name or service not known,4
+GET,/visits.js,[Errno 104] Connection reset by peer,1
+GET,/api/visits/jobs,"HTTPConnectionPool(host='us-central1-taller3-pcuneo.cloudfunctions.net', port=80): Read timed out. (read timeout=4)",9
+GET,/img/favicon.ico,"HTTPConnectionPool(host='us-central1-taller3-pcuneo.cloudfunctions.net', port=80): Read timed out. (read timeout=32)",11
+GET,/api/visits/about,"HTTPConnectionPool(host='us-central1-taller3-pcuneo.cloudfunctions.net', port=80): Read timed out. (read timeout=4)",42
+POST,/api/visits/about,"HTTPConnectionPool(host='us-central1-taller3-pcuneo.cloudfunctions.net', port=80): Read timed out. (read timeout=4)",36
+GET,/img/favicon.ico,"HTTPSConnectionPool(host='accounts.google.com', port=443): Read timed out.",53
+GET,/visits.js,"HTTPConnectionPool(host='us-central1-taller3-pcuneo.cloudfunctions.net', port=80): Read timed out. (read timeout=32)",9
+GET,/visits.js,Remote end closed connection without response,1
+POST,/api/visits/offices,"HTTPConnectionPool(host='us-central1-taller3-pcuneo.cloudfunctions.net', port=80): Read timed out. (read timeout=4)",8
+GET,/img/logo_fiuba.png,"HTTPConnectionPool(host='us-central1-taller3-pcuneo.cloudfunctions.net', port=80): Read timed out. (read timeout=32)",16
+GET,/img/logo_fiuba.png,"HTTPSConnectionPool(host='accounts.google.com', port=443): Read timed out. (read timeout=32)",4
+GET,/api/visits/about,"(<urllib3.connection.HTTPConnection object at 0x7fbac81634f0>, 'Connection to us-central1-taller3-pcuneo.cloudfunctions.net timed out. (connect timeout=4)')",1
+GET,/api/visits/home,"HTTPConnectionPool(host='us-central1-taller3-pcuneo.cloudfunctions.net', port=80): Read timed out. (read timeout=4)",34
+GET,/api/visits/home,[Errno -2] Name or service not known,2
+GET,/img/favicon.ico,[Errno -2] Name or service not known,21
+GET,/api/visits/jobs,[Errno -2] Name or service not known,1

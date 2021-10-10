@@ -1,0 +1,11 @@
+Method,Name,Error,Occurrences
+POST,/api/visits/jobs,"HTTPConnectionPool(host='us-central1-taller3-pcuneo.cloudfunctions.net', port=80): Read timed out. (read timeout=4)",41
+POST,/api/visits/legals,"HTTPConnectionPool(host='us-central1-taller3-pcuneo.cloudfunctions.net', port=80): Read timed out. (read timeout=4)",42
+GET,/api/visits/offices,"HTTPConnectionPool(host='us-central1-taller3-pcuneo.cloudfunctions.net', port=80): Read timed out. (read timeout=4)",8
+POST,/api/visits/home,"HTTPConnectionPool(host='us-central1-taller3-pcuneo.cloudfunctions.net', port=80): Read timed out. (read timeout=4)",184
+GET,/api/visits/legals,"HTTPConnectionPool(host='us-central1-taller3-pcuneo.cloudfunctions.net', port=80): Read timed out. (read timeout=4)",38
+GET,/api/visits/jobs,"HTTPConnectionPool(host='us-central1-taller3-pcuneo.cloudfunctions.net', port=80): Read timed out. (read timeout=4)",27
+GET,/api/visits/about,"HTTPConnectionPool(host='us-central1-taller3-pcuneo.cloudfunctions.net', port=80): Read timed out. (read timeout=4)",124
+POST,/api/visits/about,"HTTPConnectionPool(host='us-central1-taller3-pcuneo.cloudfunctions.net', port=80): Read timed out. (read timeout=4)",123
+POST,/api/visits/offices,"HTTPConnectionPool(host='us-central1-taller3-pcuneo.cloudfunctions.net', port=80): Read timed out. (read timeout=4)",14
+GET,/api/visits/home,"HTTPConnectionPool(host='us-central1-taller3-pcuneo.cloudfunctions.net', port=80): Read timed out. (read timeout=4)",143
