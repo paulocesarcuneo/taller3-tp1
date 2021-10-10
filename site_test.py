@@ -16,20 +16,23 @@ def retry(times: int, op):
     return result
 
 
+SITE_PATH = "/site"
+
+
 class Browser:
-    api_request_timeout = 4
+    api_request_timeout = 32
     assets_request_timeout = 32
     cache = {}
     cache_enabled = os.getenv("CACHE_ENABLED", "False") == "True"
-    retry_post = 3
-    retry_get = 3
+    retry_post = 1
+    retry_get = 1
     user_reading_time = 3
     client: HttpSession
 
     def download_page(self, page_name):
         if self.cache_enabled and self.cache[page_name]:
             return
-        html_response = self.client.get(f"/site/{page_name}.html")
+        html_response = self.client.get(f"{SITE_PATH}/{page_name}.html")
         html = html_response.content
 
         def assets(html):
@@ -46,7 +49,9 @@ class Browser:
             return result
 
         for asset in assets(html):
-            self.client.get("/site/" + asset, timeout=self.assets_request_timeout)
+            self.client.get(
+                f"{SITE_PATH}/" + asset, timeout=self.assets_request_timeout
+            )
 
         self.cache[page_name] = True
 
@@ -139,3 +144,19 @@ class LoadShape:
 
             current_step = math.floor(run_time / self.step_time) + 1
             return (current_step * self.step_load, self.spawn_rate)
+
+
+class StepLoadShape(LoadTestShape):
+    step_time = 30
+    step_load = 10
+    spawn_rate = 10
+    time_limit = 10000
+
+    def tick(self):
+        run_time = self.get_run_time()
+
+        if run_time > self.time_limit:
+            return None
+
+        current_step = math.floor(run_time / self.step_time) + 1
+        return (current_step * self.step_load, self.spawn_rate)
