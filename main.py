@@ -45,7 +45,7 @@ def inc_visits(event, context):
     start = time.time_ns()
 
     page_name = base64.b64decode(event["data"]).decode("utf-8")
-    visits.inc_visits(page_name)
+    visits.BATCHER.inc_visits(page_name)
 
     delta = time.time_ns() - start
     print("inc_visits", delta, page_name)

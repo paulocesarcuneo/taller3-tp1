@@ -12,32 +12,32 @@ def entity_inc_visits(key):
         DB.put(page_counter)
 
 
-# def inc_visits(page_name):
-#     entity_inc_visits(page_name)
-
-
-# def get_visits(page_name):
-#     page_counter = DB.get(DB.key("page", page_name))
-#     total = page_counter["visits"]
-#     return str(total)
-
-
-import random
-
-N_SHARDS = int(environ.get("N_SHARDS", "10"))
-
-
 def inc_visits(page_name):
-    nshard = random.randint(0, N_SHARDS - 1)
-    entity_inc_visits(f"{page_name}_{nshard}")
+    entity_inc_visits(page_name)
 
 
 def get_visits(page_name):
-    total = 0
-    shards = list(DB.query(kind="page").add_filter("group", "=", page_name).fetch())
-    for shard in shards:
-        total += shard["visits"]
+    page_counter = DB.get(DB.key("page", page_name))
+    total = page_counter["visits"]
     return str(total)
+
+
+# import random
+
+# N_SHARDS = int(environ.get("N_SHARDS", "10"))
+
+
+# def inc_visits(page_name):
+#     nshard = random.randint(0, N_SHARDS - 1)
+#     entity_inc_visits(f"{page_name}_{nshard}")
+
+
+# def get_visits(page_name):
+#     total = 0
+#     shards = list(DB.query(kind="page").add_filter("group", "=", page_name).fetch())
+#     for shard in shards:
+#         total += shard["visits"]
+#     return str(total)
 
 
 def init_visits(nshards):
@@ -64,22 +64,49 @@ def init_visits(nshards):
                 DB.put(entity)
 
 
-# BATCH = dict()
+import threading
+from datetime import datetime, timedelta
 
 
-# def inc_batch(page_name):
-#     global BATCH
-#     if time_elapsed:
-#         entities = list(DB.query(kind="page").fetch())
-#         for entity in entities:
-#             if entity["name"] in BATCH:
-#                 entity["visits"] += BATCH[entity["name"]]
-#             if entity["name"] == page_name:
-#                 entity["visits"] += 1
-#         DB.put_multi(entities, retry=10)
-#         BATCH = dict()
-#     else:
-#         if page_name in BATCH:
-#             BATCH[page_name] += 1
-#         else:
-#             BATCH[page_name] = 1
+class Batch:
+    BATCH_MAX = int(environ.get("BATCH_MAX", 100))
+    batch = dict()
+    batch_count = 0
+    lastupdate_datetime = datetime.now()
+    nextupdate_datetime = datetime.now()
+    lock = threading.RLock()
+
+    def _inc_count(self, key):
+        self.batch_count += 1
+        if key in self.batch:
+            self.batch[key] += 1
+        else:
+            self.batch[key] = 1
+
+    def _should_update(self):
+        return (
+            self.nextupdate_datetime < datetime.now()
+            or self.batch_count > self.BATCH_MAX
+        )
+
+    def _push_updates(self):
+        result = []
+        entities = list(DB.query(kind="page").fetch())
+        for entity in entities:
+            key = entity.key.id_or_name
+            if key in self.batch:
+                entity["visits"] += self.batch[key]
+                result.append(entity)
+        DB.put_multi(result)
+        self.nextupdate_datetime = datetime.now() + timedelta(seconds=10)
+        self.batch_count = 0
+        self.batch = dict()
+
+    def inc_visits(self, page_name):
+        with self.lock:
+            self._inc_count(page_name)
+            if self._should_update():
+                self._push_updates()
+
+
+BATCHER = Batch()

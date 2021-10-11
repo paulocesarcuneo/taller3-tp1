@@ -1,0 +1,12 @@
+Method,Name,Error,Occurrences
+GET,/api/visits/legals,429 Client Error: Too Many Requests for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/legals,7
+GET,/api/visits/offices,429 Client Error: Too Many Requests for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/offices,5
+POST,/api/visits/jobs,429 Client Error: Too Many Requests for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/jobs,5
+POST,/api/visits/offices,429 Client Error: Too Many Requests for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/offices,6
+GET,/api/visits/about,429 Client Error: Too Many Requests for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/about,30
+POST,/api/visits/home,429 Client Error: Too Many Requests for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/home,16
+GET,/api/visits/jobs,429 Client Error: Too Many Requests for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/jobs,5
+POST,/api/visits/legals,429 Client Error: Too Many Requests for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/legals,8
+GET,/api/visits/about,[Errno 104] Connection reset by peer,1
+GET,/api/visits/home,429 Client Error: Too Many Requests for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/home,27
+POST,/api/visits/about,429 Client Error: Too Many Requests for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/about,24
