@@ -1,0 +1,19 @@
+Method,Name,Error,Occurrences
+GET,/api/visits/legals,429 Client Error: Too Many Requests for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/legals,18
+GET,/api/visits/offices,429 Client Error: Too Many Requests for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/offices,10
+POST,/api/visits/jobs,429 Client Error: Too Many Requests for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/jobs,11
+POST,/api/visits/home,500 Server Error: Internal Server Error for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/home,4
+POST,/api/visits/offices,429 Client Error: Too Many Requests for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/offices,15
+GET,/api/visits/about,429 Client Error: Too Many Requests for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/about,69
+POST,/api/visits/home,429 Client Error: Too Many Requests for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/home,59
+POST,/api/visits/about,500 Server Error: Internal Server Error for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/about,2
+POST,/api/visits/legals,500 Server Error: Internal Server Error for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/legals,3
+GET,/api/visits/about,500 Server Error: Internal Server Error for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/about,3
+GET,/api/visits/jobs,429 Client Error: Too Many Requests for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/jobs,18
+GET,/api/visits/jobs,500 Server Error: Internal Server Error for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/jobs,3
+POST,/api/visits/jobs,500 Server Error: Internal Server Error for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/jobs,2
+POST,/api/visits/legals,429 Client Error: Too Many Requests for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/legals,18
+GET,/api/visits/home,500 Server Error: Internal Server Error for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/home,1
+GET,/api/visits/home,429 Client Error: Too Many Requests for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/home,76
+GET,/api/visits/offices,500 Server Error: Internal Server Error for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/offices,1
+POST,/api/visits/about,429 Client Error: Too Many Requests for url: http://us-central1-taller3-pcuneo.cloudfunctions.net/api/visits/about,62
