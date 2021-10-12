@@ -1,11 +1,21 @@
 # TP1 Taller3 2c-2021
-Sitio insticional con un contador de visitas. Desplegable en GCP como una o mas funciones, y haciendo uso de datastore y pub/sub.
+Sitio institucional con contador de visitas. Desplegable en GCP como una o mas funciones, y haciendo uso de datastore y pub/sub.
 
+Construido con:
+* python
+* gcloud
+* locust.io
+ 
 # Desarrollo Local
 
-Installar gcloud y las librerias `requirements.txt` adicionalmente instalar locust.io
+Installar gcloud y las librerias `requirements.txt` adicionalmente instalar 
 
-Para ejecutar la app y los emuladores de gcp correr los siguientes comandos.
+```shell
+pip install locust
+pip install functions-framework
+```
+
+Para ejecutar la app  y los emuladores desde una terminal de ubuntu
 
 ```shell
 
